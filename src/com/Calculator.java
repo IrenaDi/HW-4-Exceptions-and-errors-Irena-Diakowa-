@@ -1,4 +1,5 @@
 package com;
+
 abstract class Calculator  extends Input implements Contact {
     int firstNumber = firstNumberInput();
     char mathOperand = getMathOperator();
@@ -19,15 +20,19 @@ abstract class Calculator  extends Input implements Contact {
                 System.out.println(outcome+result);
                 break;
             case '/':
-                if (secondNumber == 0) {
-                    System.out.println(divisionZero);
-                } else {
-                    result = (float) firstNumber / secondNumber;
-                    System.out.println(outcome+result);
+                try {
+                       result = (float) firstNumber / secondNumber;
+                       System.out.println(outcome+result);
+                        }
+                catch(ArithmeticException e) {
+                System.out.println(divisionZero + " " + e);
                 }
                 break;
             default:
                 System.out.println(mistake);
-        }
+         }
+            if (result > 100) {
+                throw new ArithmeticException (outcomeHundred + " " + result);
+            }
     }
 }
