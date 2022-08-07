@@ -25,14 +25,14 @@ abstract class Calculator  extends Input implements Contact {
                        System.out.println(outcome+result);
                         }
                 catch(ArithmeticException e) {
-                System.out.println(divisionZero + " " + e);
+                System.out.println(divisionZero + e);
                 }
                 break;
             default:
                 System.out.println(mistake);
          }
             if (result > 100) {
-                throw new ArithmeticException (outcomeHundred + " " + result);
+                throw new ArithmeticException (outcomeHundred + result);
             }
     }
 }
