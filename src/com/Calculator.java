@@ -1,5 +1,5 @@
 package com;
-public class Calculator  extends Input implements Contact {
+abstract class Calculator  extends Input implements Contact {
     int firstNumber = firstNumberInput();
     char mathOperand = getMathOperator();
     int secondNumber = secondNumberInput();
